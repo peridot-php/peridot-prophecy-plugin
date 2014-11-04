@@ -1,0 +1,19 @@
+{
+    "name": "peridot-php/peridot-prophecy-plugin",
+    "description": "Inject prophecy mocks into your Peridot tests",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brian Scaturro",
+            "email": "scaturrob@gmail.com"
+        }
+    ],
+    "require": {
+        "peridot-php/peridot": "~1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Peridot\\Plugin\\Prophecy\\": "src/"
+        }
+    }
+}
