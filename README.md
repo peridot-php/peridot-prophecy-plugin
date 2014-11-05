@@ -3,6 +3,8 @@ Peridot Prophecy Plugin
 
 [![Build Status](https://travis-ci.org/peridot-php/peridot-prophecy-plugin.png)](https://travis-ci.org/peridot-php/peridot-prophecy-plugin) [![HHVM Status](http://hhvm.h4cc.de/badge/peridot-php/peridot-prophecy-plugin.svg)](http://hhvm.h4cc.de/package/peridot-php/peridot-prophecy-plugin)
 
+Use Peridot with the amazing mocking framework [Prophecy](https://github.com/phpspec/prophecy)
+
 ##Usage
 
 We recommend installing this plugin to your project via composer:
