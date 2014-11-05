@@ -32,9 +32,15 @@ class ProphecyPlugin
     public function onSuiteStart(Suite $suite)
     {
         $suite->getScope()->peridotAddChildScope($this->scope);
-        $prophet = $this->scope->getProphet();
-        if (class_exists($suite->getDescription())) {
-            $suite->getScope()->subject = $prophet->prophesize($suite->getDescription());
+        $description = $suite->getDescription();
+        if (class_exists($description)) {
+            $suite->addSetupFunction(function () use ($description) {
+                $prophet = $this->getProphet();
+                $this->subject = $prophet->prophesize($description);
+            });
+            $suite->addTearDownFunction(function () {
+                $this->clearProphet();
+            });
         }
     }
 

@@ -19,11 +19,22 @@ describe('ProphecyPlugin', function () {
             assert($prophet instanceof Prophet, 'suite should be able to get a prophet');
         });
 
-        it('should set a subject as mock if description is a class', function() {
+        it('should add a setup function that creates a subject', function() {
             $suite = new Suite('Peridot\Core\Suite', function() {});
             $this->emitter->emit('suite.start', [$suite]);
+            call_user_func($suite->getSetupFunctions()[0]);
             $dummy = $suite->getScope()->subject->reveal();
             assert($dummy instanceof Suite, "subject->reveal() should be instance of Suite");
+        });
+
+        it('should add a tear down function that clears a prophet', function() {
+            $suite = new Suite('Peridot\Core\Suite', function() {});
+            $this->emitter->emit('suite.start', [$suite]);
+            call_user_func($suite->getSetupFunctions()[0]);
+            $prophet = $suite->getScope()->getProphet();
+            call_user_func($suite->getTearDownFunctions()[0]);
+            $again = $suite->getScope()->getProphet();
+            assert($prophet !== $again, "prophet instance should have been cleared");
         });
     });
 

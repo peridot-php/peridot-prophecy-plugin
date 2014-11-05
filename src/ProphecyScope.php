@@ -21,4 +21,12 @@ class ProphecyScope extends Scope
         }
         return $this->prophet;
     }
+
+    /**
+     * Sets the prophet to null
+     */
+    public function clearProphet()
+    {
+        $this->prophet = null;
+    }
 } 
