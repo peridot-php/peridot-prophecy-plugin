@@ -1,16 +1,18 @@
 <?php
 describe('Bird', function() {
 
+    afterEach(function() {
+        $this->getProphet()->checkPredictions();
+    });
+
     it('should fly and then land', function() {
         $this->subject->fly()->shouldBeCalled();
         $this->subject->land()->shouldBeCalled();
-        $this->getProphet()->checkPredictions();
     });
 
     it('should fly', function() {
         $this->subject->fly()->shouldBeCalled();
         $this->subject->reveal()->fly();
-        $this->getProphet()->checkPredictions();
     });
 });
 
