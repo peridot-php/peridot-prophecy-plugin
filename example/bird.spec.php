@@ -1,6 +1,9 @@
 <?php
 describe('Bird', function() {
 
+    /**
+     * Use after each to check mock assumptions 
+     */
     afterEach(function() {
         $this->getProphet()->checkPredictions();
     });
