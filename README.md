@@ -18,7 +18,7 @@ You can register the plugin via your [peridot.php](http://peridot-php.github.io/
 ```php
 <?php
 use Evenement\EventEmitterInterface;
-use Peridot\Plugin\Prophecy\Plugin;
+use Peridot\Plugin\Prophecy\ProphecyPlugin;
 
 return function(EventEmitterInterface $emitter) {
     $plugin = new ProphecyPlugin($emitter);
