@@ -22,7 +22,6 @@ class ProphecyPlugin
     public function __construct(EventEmitterInterface $emitter)
     {
         $this->emitter = $emitter;
-        $this->scope = new ProphecyScope();
         $this->listen();
     }
 
@@ -31,7 +30,7 @@ class ProphecyPlugin
      */
     public function onSuiteStart(Suite $suite)
     {
-        $suite->getScope()->peridotAddChildScope($this->scope);
+        $suite->getScope()->peridotAddChildScope(new ProphecyScope());
         $description = $suite->getDescription();
         if (class_exists($description)) {
             $suite->addSetupFunction(function () use ($description) {
