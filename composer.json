@@ -9,8 +9,8 @@
         }
     ],
     "require": {
-        "peridot-php/peridot": "~1.0",
-        "phpspec/prophecy": "~1.0"
+        "peridot-php/peridot": "~1.18",
+        "phpspec/prophecy": "~1.6"
     },
     "autoload": {
         "psr-4": {
