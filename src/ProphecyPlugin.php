@@ -32,15 +32,17 @@ class ProphecyPlugin
     {
         $suite->getScope()->peridotAddChildScope(new ProphecyScope());
         $description = $suite->getDescription();
-        if (class_exists($description)) {
+
             $suite->addSetupFunction(function () use ($description) {
                 $prophet = $this->getProphet();
-                $this->subject = $prophet->prophesize($description);
+                if (class_exists($description)) {
+                    $this->subject = $prophet->prophesize($description);
+                }
             });
+
             $suite->addTearDownFunction(function () {
                 $this->clearProphet();
             });
-        }
     }
 
     /**
