@@ -5,7 +5,7 @@ Peridot Prophecy Plugin
 
 Use Peridot with the amazing mocking framework [Prophecy](https://github.com/phpspec/prophecy)
 
-##Usage
+## Usage
 
 We recommend installing this plugin to your project via composer:
 
@@ -38,7 +38,7 @@ describe('Bird', function() {
 });
 ```
 
-###Automatic injection of mock
+### Automatic injection of mock
 
 If a test suite's description is an existing class, the prophecy plugin will automatically inject a `$subject` instance
 variable into your tests that is a mock of the class.
@@ -52,7 +52,7 @@ describe('Vendor\Namespace\Klass', function() {
 });
 ```
 
-###Using the scope on a test by test basis
+### Using the scope on a test by test basis
 
 Like any other peridot [scope](http://peridot-php.github.io/#scopes), you can mix the `ProphecyScope` provided by this plugin
 on a test by test, or suite by suite basis.
@@ -73,7 +73,7 @@ describe('Bird', function() {
 });
 ```
 
-##Example specs
+## Example specs
 
 To test examples that are using the plugin, run the following:
 
@@ -81,7 +81,7 @@ To test examples that are using the plugin, run the following:
 $ vendor/bin/peridot example/bird.spec.php
 ```
 
-##Running plugin tests
+## Running plugin tests
 
 ```
 $ vendor/bin/peridot specs/
